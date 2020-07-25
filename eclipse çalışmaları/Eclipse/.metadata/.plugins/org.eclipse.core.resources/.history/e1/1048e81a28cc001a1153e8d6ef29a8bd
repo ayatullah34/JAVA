@@ -1,0 +1,3 @@
+module SpringIntro {
+	requires spring.context;
+}

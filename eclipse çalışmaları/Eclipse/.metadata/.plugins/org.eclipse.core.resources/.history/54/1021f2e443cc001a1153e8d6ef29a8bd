@@ -1,0 +1,32 @@
+package com.springdemo;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//XML KULLANIMI
+		//ClassPathXmlApplicationContext context= 
+			//	new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		//CLASS KULLANIMI
+		
+		AnnotationConfigApplicationContext context= 
+				new AnnotationConfigApplicationContext();
+			
+		context.refresh();
+		
+		ICustomerDal customerDal=context.getBean("database",ICustomerDal.class);
+		
+		
+		customerDal.add();
+		
+
+	}
+
+	//IoC - Inversion of Control
+	//Dependency Injection
+	//SOLID
+}
